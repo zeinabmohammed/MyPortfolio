@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 import cloudinary
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -126,16 +127,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 
-STATICFILES_DIRS = (
-     os.path.join(BASE_DIR, 'static'),
-)
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
+# STATICFILES_DIRS = (
+#      os.path.join(BASE_DIR, 'static'),
+# )
+# STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
 
-STATIC_URL = '/static/'
+# STATIC_URL = '/static/'
 
-
-
-import dj_database_url
 db_from_env=dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 STATIC_URL = '/static/'
@@ -143,3 +141,13 @@ STATIC_URL = '/static/'
 
 STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL="/media/"
+
+
+STATIC_FILES_DIRS = [
+    os.path.join(BASE_DIR, 'static_in_env')
+
+]
+VENV_PATH = os.path.dirname(BASE_DIR)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+MEDIA_ROOT = os.path.join(VENV_PATH, 'media_root')
