@@ -1,0 +1,13 @@
+.bg-primary{background-color:#900C3F !important}
+.nav-link js-scroll-trigger{
+					color: #ffffff;	
+}
+#sideNav .navbar-nav .nav-item .nav-link {
+    font-weight: 800;
+    letter-spacing: .05rem;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+.d-block d-lg-none{
+	font: #900C3F !important;
+}
