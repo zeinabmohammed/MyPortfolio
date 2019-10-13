@@ -43,11 +43,11 @@ INSTALLED_APPS = [
     'cloudinary',
 
 ]
-cloudinary.config(
-    cloud_name = 'dt592hf45',
-    api_key = '424544142314243',
-    api_secret ='lq5-vhwJJLFkmP1HG8xFQrlXR2E'
-)
+# cloudinary.config(
+#     cloud_name = 'dt592hf45',
+#     api_key = '424544142314243',
+#     api_secret ='lq5-vhwJJLFkmP1HG8xFQrlXR2E'
+# )
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -127,27 +127,22 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 
-# STATICFILES_DIRS = (
-#      os.path.join(BASE_DIR, 'static'),
-# )
-# STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
+STATICFILES_DIRS = (
+     os.path.join(BASE_DIR, 'static'),
+)
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
 
-# STATIC_URL = '/static/'
-
-db_from_env=dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
 STATIC_URL = '/static/'
 
 
-STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
-MEDIA_URL="/media/"
 
-
-STATIC_FILES_DIRS = [
-    os.path.join(BASE_DIR, 'static_in_env')
-
-]
-VENV_PATH = os.path.dirname(BASE_DIR)
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-
-MEDIA_ROOT = os.path.join(VENV_PATH, 'media_root')
+# db_from_env=dj_database_url.config(conn_max_age=500)
+# DATABASES['default'].update(db_from_env)
+# STATIC_URL = '/static/'
+# STATICFILES_DIRS=(
+#     os.path.join(BASE_DIR,"project_static"),
+# )
+# STATIC_ROOT=os.path.join(BASE_DIR,"staticfiles")
+# STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
+# MEDIA_URL="/media/"
+# MEDIA_ROOT=os.path.join(BASE_DIR, "staticfiles/media/")

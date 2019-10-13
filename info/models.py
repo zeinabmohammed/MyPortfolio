@@ -1,5 +1,5 @@
 from django.db import models
-from cloudinary.models import CloudinaryField
+
 
 class About(models.Model):
 	name		 = models.CharField(max_length=200)
@@ -26,7 +26,7 @@ class Experience(models.Model):
 
 class Project(models.Model):
 	title 		= models.CharField(max_length=200)
-	image 		= CloudinaryField('image',null=True)
+	image 		= models.ImageField(upload_to='static/img/prog', null=True)
 	description = models.TextField()
 	link		= models.URLField()
 	code_link   = models.URLField(null=True)
